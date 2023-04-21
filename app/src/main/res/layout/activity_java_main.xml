@@ -1,19 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".JavaMainActivity">
 
-    <TextView
-        android:id="@+id/tv1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Java"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnGet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OkHttpGet"
+                android:textAllCaps="false" />
+
+            <TextView
+                android:id="@+id/tvGet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="获取笑话：" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnPostForm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OkHttpPostForm"
+                android:textAllCaps="false" />
+
+            <TextView
+                android:id="@+id/tvPostForm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="注册：" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnPostJson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OkHttpPostJson"
+
+                android:textAllCaps="false" />
+
+            <TextView
+                android:id="@+id/tvPostJson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="打赏：" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnPostFile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OkHttpPostFile"
+                android:textAllCaps="false" />
+
+            <TextView
+                android:id="@+id/tvPostFile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上传图片：" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
