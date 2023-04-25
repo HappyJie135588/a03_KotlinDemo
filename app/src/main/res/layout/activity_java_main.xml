@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,6 +10,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OkHttp:" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -85,7 +89,82 @@
                 android:text="上传图片：" />
         </LinearLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Retrofit:" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnGet2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RetrofitGet"
+                android:textAllCaps="false" />
+
+            <TextView
+                android:id="@+id/tvGet2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="获取笑话：" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnPostForm2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RetrofitPostForm"
+                android:textAllCaps="false" />
+
+            <TextView
+                android:id="@+id/tvPostForm2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="注册：" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnPostJson2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RetrofitPostJson"
+
+                android:textAllCaps="false" />
+
+            <TextView
+                android:id="@+id/tvPostJson2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="打赏：" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnPostFile2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RetrofitPostFile"
+                android:textAllCaps="false" />
+
+            <TextView
+                android:id="@+id/tvPostFile2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上传图片：" />
+        </LinearLayout>
     </LinearLayout>
-
 </ScrollView>

@@ -76,5 +76,74 @@ public class JavaMainActivity extends AppCompatActivity {
                 });
             }
         });
+
+        binding.btnGet2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RetrofitHelper.getInstance().getJoke("2").subscribe(new Consumer<String>() {
+                    @Override
+                    public void accept(String s) throws Throwable {
+                        binding.tvGet2.setText(s);
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) throws Throwable {
+                        throwable.printStackTrace();
+                    }
+                });
+            }
+        });
+        binding.btnPostForm2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RetrofitHelper.getInstance().postRegister("HappyJie1355882").subscribe(new Consumer<String>() {
+                    @Override
+                    public void accept(String s) throws Throwable {
+                        binding.tvPostForm2.setText(s);
+                    }
+                }, new ErrorConsumer() {
+                    @Override
+                    protected void error(ApiException ex) {
+                        binding.tvPostForm2.setText(ex.displayMessage);
+                    }
+                });
+
+            }
+        });
+        binding.btnPostJson2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PriseArticleData priseArticleData = new PriseArticleData("1403262826952323074", 2);
+                RetrofitHelper.getInstance().postJson(priseArticleData).subscribe(new Consumer<String>() {
+                    @Override
+                    public void accept(String s) throws Throwable {
+                        binding.tvPostJson2.setText(s);
+                    }
+                }, new ErrorConsumer() {
+                    @Override
+                    protected void error(ApiException ex) {
+                        binding.tvPostJson2.setText(ex.displayMessage);
+                    }
+                });
+            }
+        });
+
+        binding.btnPostFile2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RetrofitHelper.getInstance().postFile("/sdcard/text1.png").subscribe(new Consumer<String>() {
+                    @Override
+                    public void accept(String s) throws Throwable {
+                        binding.tvPostFile2.setText(s);
+                    }
+                }, new ErrorConsumer() {
+                    @Override
+                    protected void error(ApiException ex) {
+                        binding.tvPostFile2.setText(ex.displayMessage);
+                    }
+                });
+            }
+        });
+
     }
 }
