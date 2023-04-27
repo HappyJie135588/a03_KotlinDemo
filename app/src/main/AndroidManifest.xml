@@ -41,6 +41,9 @@
         <activity
             android:name=".KotlinMainActivity"
             android:exported="false" />
+        <activity
+            android:name=".custom.CustomViewActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

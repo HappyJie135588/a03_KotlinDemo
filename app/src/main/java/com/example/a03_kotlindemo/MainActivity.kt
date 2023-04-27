@@ -3,6 +3,7 @@ package com.example.a03_kotlindemo
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.a03_kotlindemo.custom.CustomViewActivity
 import com.example.a03_kotlindemo.databinding.ActivityMainBinding
 import com.example.a03_kotlindemo.network.JavaNetWorkActivity
 
@@ -20,6 +21,9 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btnParabola.setOnClickListener {
             startActivity(Intent(this, ParabolaActivity::class.java))
+        }
+        binding.btnCustomView.setOnClickListener {
+            startActivity(Intent(this, CustomViewActivity::class.java))
         }
     }
 }
