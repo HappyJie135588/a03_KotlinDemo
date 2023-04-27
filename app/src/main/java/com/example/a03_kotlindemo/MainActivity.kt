@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.a03_kotlindemo.databinding.ActivityMainBinding
+import com.example.a03_kotlindemo.network.JavaNetWorkActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -15,7 +16,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, KotlinMainActivity::class.java))
         }
         binding.btnJava.setOnClickListener {
-            startActivity(Intent(this, JavaMainActivity::class.java))
+            startActivity(Intent(this, JavaNetWorkActivity::class.java))
+        }
+        binding.btnParabola.setOnClickListener {
+            startActivity(Intent(this, ParabolaActivity::class.java))
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.example.a03_kotlindemo.network.retrofit.api;
 
-import com.example.a03_kotlindemo.model.PriseArticleData;
+import com.example.a03_kotlindemo.network.model.PriseArticleData;
 import com.example.a03_kotlindemo.network.retrofit.BaseResponse;
 
 import io.reactivex.rxjava3.core.Observable;

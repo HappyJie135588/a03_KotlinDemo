@@ -1,4 +1,4 @@
-package com.example.a03_kotlindemo;
+package com.example.a03_kotlindemo.network;
 
 
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.a03_kotlindemo.databinding.ActivityJavaMainBinding;
-import com.example.a03_kotlindemo.model.PriseArticleData;
+import com.example.a03_kotlindemo.network.model.PriseArticleData;
 import com.example.a03_kotlindemo.network.okhttp.OkHelper;
 import com.example.a03_kotlindemo.network.okhttp.OkListener;
 import com.example.a03_kotlindemo.network.retrofit.exception.ApiException;
@@ -16,7 +16,7 @@ import com.example.a03_kotlindemo.network.retrofit.RetrofitHelper;
 
 import io.reactivex.rxjava3.functions.Consumer;
 
-public class JavaMainActivity extends AppCompatActivity {
+public class JavaNetWorkActivity extends AppCompatActivity {
 
     private ActivityJavaMainBinding binding;
     private String TAG = "JavaMainActivity";

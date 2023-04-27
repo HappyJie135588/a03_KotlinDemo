@@ -1,4 +1,4 @@
-package com.example.a03_kotlindemo.model;
+package com.example.a03_kotlindemo.network.model;
 
 /**
  * 打赏的实体类

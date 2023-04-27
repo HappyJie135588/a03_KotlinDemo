@@ -1,6 +1,6 @@
 package com.example.a03_kotlindemo.network.retrofit;
 
-import com.example.a03_kotlindemo.model.PriseArticleData;
+import com.example.a03_kotlindemo.network.model.PriseArticleData;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
