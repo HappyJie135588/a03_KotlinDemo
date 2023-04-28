@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="WatchFace">
+        <attr name="secondColor" format="color"/>
+        <attr name="minColor" format="color"/>
+        <attr name="hourColor" format="color"/>
+        <attr name="scaleColor" format="color"/>
+        <attr name="bg" format="reference"/>
+        <attr name="scaleShow" format="boolean"/>
+    </declare-styleable>
+</resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -25,8 +26,12 @@
         </com.example.a03_kotlindemo.custom.SlideView>
 
         <com.example.a03_kotlindemo.custom.WatchFace
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center_horizontal" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:bg="@mipmap/watch_face_bg2"
+            app:hourColor="#000000"
+            app:minColor="#000000"
+            app:scaleColor="#F5B0A5"
+            app:secondColor="#F34647" />
     </LinearLayout>
 </ScrollView>
