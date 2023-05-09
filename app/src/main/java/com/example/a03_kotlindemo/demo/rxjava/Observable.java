@@ -1,8 +1,13 @@
 package com.example.a03_kotlindemo.demo.rxjava;
 
+import com.example.a03_kotlindemo.demo.rxjava.map.Function;
+import com.example.a03_kotlindemo.demo.rxjava.map.ObservableFlatMap;
+import com.example.a03_kotlindemo.demo.rxjava.map.ObservableMap;
+
 /**
- * 被观察者的核心抽象类；
- * 也是使用框架的入口
+ * 被观察者的核心抽象类
+ * 实现ObservableSource接口
+ * 提供实际订阅的抽象方法
  */
 public abstract class Observable<T> implements ObservableSource<T> {
     @Override
@@ -18,5 +23,13 @@ public abstract class Observable<T> implements ObservableSource<T> {
 
     public static <T> Observable<T> create(ObservableOnSubscribe<T> source) {
         return new ObservableCreate<>(source);
+    }
+
+    public <R> ObservableMap<T, R> map(Function<T, R> function) {
+        return new ObservableMap<>(this, function);
+    }
+
+    public <R> ObservableFlatMap<T, R> flatMap(Function<T, ObservableSource<R>> function) {
+        return new ObservableFlatMap<>(this, function);
     }
 }
