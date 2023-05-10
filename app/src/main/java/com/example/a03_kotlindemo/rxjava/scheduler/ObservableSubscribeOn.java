@@ -1,8 +1,8 @@
-package com.example.a03_kotlindemo.demo.rxjava.scheduler;
+package com.example.a03_kotlindemo.rxjava.scheduler;
 
-import com.example.a03_kotlindemo.demo.rxjava.ObservableSource;
-import com.example.a03_kotlindemo.demo.rxjava.Observer;
-import com.example.a03_kotlindemo.demo.rxjava.map.AbstractObservableWithUpStream;
+import com.example.a03_kotlindemo.rxjava.ObservableSource;
+import com.example.a03_kotlindemo.rxjava.Observer;
+import com.example.a03_kotlindemo.rxjava.map.AbstractObservableWithUpStream;
 
 public class ObservableSubscribeOn<T> extends AbstractObservableWithUpStream<T, T> {
 

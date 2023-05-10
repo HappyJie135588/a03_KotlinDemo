@@ -1,7 +1,7 @@
-package com.example.a03_kotlindemo.demo.rxjava.map;
+package com.example.a03_kotlindemo.rxjava.map;
 
-import com.example.a03_kotlindemo.demo.rxjava.ObservableSource;
-import com.example.a03_kotlindemo.demo.rxjava.Observer;
+import com.example.a03_kotlindemo.rxjava.ObservableSource;
+import com.example.a03_kotlindemo.rxjava.Observer;
 
 /**
  * 具体的flatMap转换被观察者实现类，持有ObservableOnSubscribe接口的引用

@@ -1,4 +1,4 @@
-package com.example.a03_kotlindemo.demo.rxjava;
+package com.example.a03_kotlindemo.rxjava;
 
 /**
  * 事件发射器接口，提供发送事件的方法

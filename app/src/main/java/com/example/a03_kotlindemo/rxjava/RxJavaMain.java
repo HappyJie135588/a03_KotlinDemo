@@ -1,6 +1,6 @@
-package com.example.a03_kotlindemo.demo.rxjava;
+package com.example.a03_kotlindemo.rxjava;
 
-import com.example.a03_kotlindemo.demo.rxjava.map.Function;
+import com.example.a03_kotlindemo.rxjava.map.Function;
 
 public class RxJavaMain {
     public static void main(String[] args) {

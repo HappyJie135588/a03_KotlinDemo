@@ -1,10 +1,11 @@
-package com.example.a03_kotlindemo.demo.rxjava;
+package com.example.a03_kotlindemo.rxjava;
 
-import com.example.a03_kotlindemo.demo.rxjava.map.Function;
-import com.example.a03_kotlindemo.demo.rxjava.map.ObservableFlatMap;
-import com.example.a03_kotlindemo.demo.rxjava.map.ObservableMap;
-import com.example.a03_kotlindemo.demo.rxjava.scheduler.ObservableSubscribeOn;
-import com.example.a03_kotlindemo.demo.rxjava.scheduler.Scheduler;
+import com.example.a03_kotlindemo.rxjava.map.ObservableFlatMap;
+import com.example.a03_kotlindemo.rxjava.scheduler.ObservableObserveOn;
+import com.example.a03_kotlindemo.rxjava.scheduler.ObservableSubscribeOn;
+import com.example.a03_kotlindemo.rxjava.scheduler.Scheduler;
+import com.example.a03_kotlindemo.rxjava.map.Function;
+import com.example.a03_kotlindemo.rxjava.map.ObservableMap;
 
 /**
  * 被观察者的核心抽象类
@@ -37,5 +38,19 @@ public abstract class Observable<T> implements ObservableSource<T> {
 
     public ObservableSubscribeOn<T> subscribeOn(Scheduler scheduler) {
         return new ObservableSubscribeOn<>(this, scheduler);
+    }
+
+    public ObservableObserveOn<T> observeOn(Scheduler scheduler) {
+        return observeOn( scheduler,false);
+    }
+
+    /**
+     *
+     * @param scheduler
+     * @param delayError 延迟执行错误
+     * @return
+     */
+    public ObservableObserveOn<T> observeOn(Scheduler scheduler,boolean delayError) {
+        return new ObservableObserveOn<>(this, scheduler,delayError);
     }
 }

@@ -1,4 +1,4 @@
-package com.example.a03_kotlindemo.demo.rxjava;
+package com.example.a03_kotlindemo.rxjava;
 
 /**
  * 观察者接口，提供处理事件的回调方法

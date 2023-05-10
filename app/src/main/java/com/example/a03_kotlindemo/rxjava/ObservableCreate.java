@@ -1,4 +1,4 @@
-package com.example.a03_kotlindemo.demo.rxjava;
+package com.example.a03_kotlindemo.rxjava;
 
 /**
  * 具体的创建被观察者实现类，持有ObservableOnSubscribe接口的引用

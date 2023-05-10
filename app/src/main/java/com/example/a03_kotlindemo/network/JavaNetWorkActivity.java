@@ -8,12 +8,12 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.a03_kotlindemo.databinding.ActivityJavaMainBinding;
-import com.example.a03_kotlindemo.demo.rxjava.Emitter;
-import com.example.a03_kotlindemo.demo.rxjava.Observable;
-import com.example.a03_kotlindemo.demo.rxjava.ObservableOnSubscribe;
-import com.example.a03_kotlindemo.demo.rxjava.Observer;
-import com.example.a03_kotlindemo.demo.rxjava.map.Function;
-import com.example.a03_kotlindemo.demo.rxjava.scheduler.Schedulers;
+import com.example.a03_kotlindemo.rxjava.Emitter;
+import com.example.a03_kotlindemo.rxjava.Observable;
+import com.example.a03_kotlindemo.rxjava.ObservableOnSubscribe;
+import com.example.a03_kotlindemo.rxjava.Observer;
+import com.example.a03_kotlindemo.rxjava.map.Function;
+import com.example.a03_kotlindemo.rxjava.scheduler.Schedulers;
 import com.example.a03_kotlindemo.network.model.PriseArticleData;
 import com.example.a03_kotlindemo.network.okhttp.OkHelper;
 import com.example.a03_kotlindemo.network.okhttp.OkListener;
@@ -34,41 +34,6 @@ public class JavaNetWorkActivity extends AppCompatActivity {
         binding = ActivityJavaMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         init();
-        Observable.create(new ObservableOnSubscribe<Integer>() {
-                    @Override
-                    public void subscribe(Emitter<Integer> emitter) {
-                        Log.d(TAG, "create: " + Thread.currentThread().getName());
-                        emitter.onNext(123);
-                    }
-                }).subscribeOn(Schedulers.newThread())
-                .map(new Function<Integer, String>() {
-                    @Override
-                    public String apply(Integer s) {
-                        Log.d(TAG, "map: " + Thread.currentThread().getName());
-                        return s.toString();
-                    }
-                }).subscribe(new Observer<String>() {
-                    @Override
-                    public void onSubscribe() {
-                        Log.d(TAG, "onSubscribe: ");
-                    }
-
-                    @Override
-                    public void onNext(String o) {
-                        Log.d(TAG, "onNext: " + Thread.currentThread().getName());
-                        Log.d(TAG, "onNext: " + o);
-                    }
-
-                    @Override
-                    public void onError(Throwable throwable) {
-                        Log.d(TAG, "onError: " + throwable);
-                    }
-
-                    @Override
-                    public void onComplete() {
-                        Log.d(TAG, "onComplete: ");
-                    }
-                });
     }
 
     private void init() {

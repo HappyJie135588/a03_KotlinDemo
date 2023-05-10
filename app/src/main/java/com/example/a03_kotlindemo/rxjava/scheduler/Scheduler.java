@@ -1,4 +1,4 @@
-package com.example.a03_kotlindemo.demo.rxjava.scheduler;
+package com.example.a03_kotlindemo.rxjava.scheduler;
 
 public abstract class Scheduler {
     public abstract Worker createWorker();

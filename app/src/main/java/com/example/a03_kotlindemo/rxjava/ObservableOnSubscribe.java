@@ -1,4 +1,4 @@
-package com.example.a03_kotlindemo.demo.rxjava;
+package com.example.a03_kotlindemo.rxjava;
 
 /**
  * 被观察者与事件解耦的接口

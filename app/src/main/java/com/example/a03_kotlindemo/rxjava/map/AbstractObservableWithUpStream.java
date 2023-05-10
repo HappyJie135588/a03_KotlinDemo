@@ -1,7 +1,7 @@
-package com.example.a03_kotlindemo.demo.rxjava.map;
+package com.example.a03_kotlindemo.rxjava.map;
 
-import com.example.a03_kotlindemo.demo.rxjava.Observable;
-import com.example.a03_kotlindemo.demo.rxjava.ObservableSource;
+import com.example.a03_kotlindemo.rxjava.Observable;
+import com.example.a03_kotlindemo.rxjava.ObservableSource;
 
 /**
  * 装饰器模式，避免太多子类

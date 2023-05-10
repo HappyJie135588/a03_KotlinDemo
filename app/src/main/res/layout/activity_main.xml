@@ -13,6 +13,12 @@
         android:text="Kotlin" />
 
     <Button
+        android:id="@+id/btnRxJava"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="手撸Rxjava" />
+
+    <Button
         android:id="@+id/btnJava"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
