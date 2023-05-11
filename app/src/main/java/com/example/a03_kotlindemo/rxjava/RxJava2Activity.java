@@ -1,11 +1,12 @@
 package com.example.a03_kotlindemo.rxjava;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 
-import com.example.a03_kotlindemo.R;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.a03_kotlindemo.databinding.ActivityRxJava2Binding;
+import com.example.a03_kotlindemo.rxjava.rxlifecycle.RxLifecycle;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.annotations.NonNull;
@@ -18,11 +19,13 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class RxJava2Activity extends AppCompatActivity {
     private static final String TAG = "RxJava2Activity";
+    private ActivityRxJava2Binding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rx_java2);
+        binding = ActivityRxJava2Binding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         Observable.create(new ObservableOnSubscribe<Object>() {
                     @Override
                     public void subscribe(@NonNull ObservableEmitter<Object> emitter) throws Throwable {
@@ -30,6 +33,7 @@ public class RxJava2Activity extends AppCompatActivity {
                         emitter.onNext("123");
                     }
                 })
+                .compose(RxLifecycle.bindRxLifecycle(this))//绑定自定义的RxLifecycle，在页面销毁时取消订阅
                 .subscribeOn(Schedulers.io())
                 .map(new Function<Object, Object>() {
                     @Override
