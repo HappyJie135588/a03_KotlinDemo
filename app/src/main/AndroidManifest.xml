@@ -45,7 +45,7 @@
             android:name=".custom.CustomViewActivity"
             android:exported="false" />
         <activity
-            android:name=".ParabolaActivity"
+            android:name=".parabola.ParabolaActivity"
             android:exported="false" />
     </application>
 

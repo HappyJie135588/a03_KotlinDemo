@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.a03_kotlindemo.custom.CustomViewActivity
 import com.example.a03_kotlindemo.databinding.ActivityMainBinding
 import com.example.a03_kotlindemo.network.JavaNetWorkActivity
+import com.example.a03_kotlindemo.parabola.ParabolaActivity
 import com.example.a03_kotlindemo.rxjava.RxjavaActivity
 
 class MainActivity : AppCompatActivity() {

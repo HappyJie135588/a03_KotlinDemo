@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ParabolaActivity">
+    tools:context=".parabola.ParabolaActivity">
 
     <Button
-        android:id="@+id/btn1"
+        android:id="@+id/btnAnimate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="测试"
+        android:text="动画测试"
         android:textAllCaps="false" />
 
     <ImageView

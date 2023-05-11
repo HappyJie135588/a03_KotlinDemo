@@ -1,4 +1,4 @@
-package com.example.a03_kotlindemo;
+package com.example.a03_kotlindemo.parabola;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,7 +19,7 @@ public class ParabolaActivity extends AppCompatActivity {
     }
 
     private void init() {
-        binding.btn1.setOnClickListener(new View.OnClickListener() {
+        binding.btnAnimate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 binding.ivTest.animate().translationX(200);
