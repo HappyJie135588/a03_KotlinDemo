@@ -61,7 +61,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="OkHttpPostJson"
-
                 android:textAllCaps="false" />
 
             <TextView
@@ -139,7 +138,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="RetrofitPostJson"
-
                 android:textAllCaps="false" />
 
             <TextView

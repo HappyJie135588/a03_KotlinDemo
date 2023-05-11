@@ -60,7 +60,7 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
 
     implementation 'com.jakewharton.rxbinding4:rxbinding:4.0.0'
-    //implementation 'com.github.tbruyelle:rxpermissions:0.12'
+    implementation 'com.github.tbruyelle:rxpermissions:0.12'
     implementation 'com.trello.rxlifecycle3:rxlifecycle:3.0.0'
     implementation 'com.trello.rxlifecycle3:rxlifecycle-android:3.0.0'
     implementation 'com.trello.rxlifecycle3:rxlifecycle-components:3.0.0'
