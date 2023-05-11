@@ -33,7 +33,10 @@
             android:exported="false" />
         <activity
             android:name=".rxjava.RxjavaActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
+        <activity
+            android:name=".rxjava.RxJava2Activity"
+            android:exported="false" />
         <activity
             android:name=".KotlinMainActivity"
             android:exported="false" />
@@ -42,7 +45,7 @@
             android:exported="false" />
         <activity
             android:name=".ParabolaActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
     </application>
 
 </manifest>

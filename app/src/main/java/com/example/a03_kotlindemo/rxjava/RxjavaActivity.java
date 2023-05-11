@@ -1,21 +1,33 @@
 package com.example.a03_kotlindemo.rxjava;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
-import com.example.a03_kotlindemo.R;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.a03_kotlindemo.databinding.ActivityRxjavaBinding;
 import com.example.a03_kotlindemo.rxjava.map.Function;
 import com.example.a03_kotlindemo.rxjava.scheduler.Schedulers;
 
 public class RxjavaActivity extends AppCompatActivity {
-    private String TAG = "RxjavaActivity";
+    private static final String TAG = "RxjavaActivity";
+    private ActivityRxjavaBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rxjava);
+        binding = ActivityRxjavaBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        binding.btnRxjavaTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RxjavaActivity.this, RxJava2Activity.class));
+            }
+        });
+
         Observable.create(new ObservableOnSubscribe<Integer>() {
                     @Override
                     public void subscribe(Emitter<Integer> emitter) {

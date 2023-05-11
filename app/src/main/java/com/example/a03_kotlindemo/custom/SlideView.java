@@ -14,7 +14,7 @@ import com.example.a03_kotlindemo.databinding.SlideActionBinding;
 
 
 public class SlideView extends ViewGroup implements View.OnClickListener {
-    public static final String TAG = "SlideView";
+    private static final String TAG = "SlideView";
 
     private View contentView;
     private View actionView;

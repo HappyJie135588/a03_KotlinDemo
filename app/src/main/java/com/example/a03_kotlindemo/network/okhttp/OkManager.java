@@ -29,7 +29,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
  * OkHttp管理类，不对外调用，谨慎修改，
  */
 public class OkManager {
-    private static String TAG = "OkManager";
+    private static final String TAG = "OkManager";
     private OkHttpClient okHttpCliet;
 
     protected OkManager() {

@@ -13,7 +13,7 @@ import okhttp3.Response;
  */
 public class LogIntercept implements Interceptor {
 
-    private static String TAG = "LogIntercept";
+    private static final String TAG = "LogIntercept";
 
     @Override
     public Response intercept(Chain chain) throws IOException {

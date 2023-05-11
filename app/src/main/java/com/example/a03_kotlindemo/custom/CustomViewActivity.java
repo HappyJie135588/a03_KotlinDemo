@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.a03_kotlindemo.databinding.ActivityCustomViewBinding;
 
 public class CustomViewActivity extends AppCompatActivity {
-    public static final String TAG = "CustomViewActivity";
+    private static final String TAG = "CustomViewActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

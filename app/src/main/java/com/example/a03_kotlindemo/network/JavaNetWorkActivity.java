@@ -26,7 +26,7 @@ import io.reactivex.rxjava3.functions.Consumer;
 public class JavaNetWorkActivity extends AppCompatActivity {
 
     private ActivityJavaMainBinding binding;
-    private String TAG = "JavaMainActivity";
+    private static final String TAG = "JavaMainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
