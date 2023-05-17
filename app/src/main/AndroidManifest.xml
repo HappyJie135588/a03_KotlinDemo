@@ -39,7 +39,7 @@
             android:name=".rxjava.RxJava2Activity"
             android:exported="false" />
         <activity
-            android:name=".KotlinMainActivity"
+            android:name=".kt.KotlinMainActivity"
             android:exported="false" />
         <activity
             android:name=".custom.CustomViewActivity"

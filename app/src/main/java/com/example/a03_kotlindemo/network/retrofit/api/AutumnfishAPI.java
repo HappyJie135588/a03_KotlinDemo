@@ -13,7 +13,7 @@ public interface AutumnfishAPI {
     String baseUrl = RetrofitUrl.autumnfish;
 
     @GET("joke")
-    Observable<String> getjoke(@Query("num") String num);
+    Observable<String> getjoke(@Query("num") int num);
 
     @POST("user/register")
     @FormUrlEncoded

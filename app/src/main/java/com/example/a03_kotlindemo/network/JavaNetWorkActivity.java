@@ -2,24 +2,17 @@ package com.example.a03_kotlindemo.network;
 
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.a03_kotlindemo.databinding.ActivityJavaMainBinding;
-import com.example.a03_kotlindemo.rxjava.Emitter;
-import com.example.a03_kotlindemo.rxjava.Observable;
-import com.example.a03_kotlindemo.rxjava.ObservableOnSubscribe;
-import com.example.a03_kotlindemo.rxjava.Observer;
-import com.example.a03_kotlindemo.rxjava.map.Function;
-import com.example.a03_kotlindemo.rxjava.scheduler.Schedulers;
 import com.example.a03_kotlindemo.network.model.PriseArticleData;
 import com.example.a03_kotlindemo.network.okhttp.OkHelper;
 import com.example.a03_kotlindemo.network.okhttp.OkListener;
+import com.example.a03_kotlindemo.network.retrofit.RetrofitHelper;
 import com.example.a03_kotlindemo.network.retrofit.exception.ApiException;
 import com.example.a03_kotlindemo.network.retrofit.exception.ErrorConsumer;
-import com.example.a03_kotlindemo.network.retrofit.RetrofitHelper;
 
 import io.reactivex.rxjava3.functions.Consumer;
 
@@ -87,7 +80,7 @@ public class JavaNetWorkActivity extends AppCompatActivity {
         binding.btnGet2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RetrofitHelper.getInstance().getJoke("2").subscribe(new Consumer<String>() {
+                RetrofitHelper.getInstance().getJoke(2).subscribe(new Consumer<String>() {
                     @Override
                     public void accept(String s) throws Throwable {
                         binding.tvGet2.setText(s);

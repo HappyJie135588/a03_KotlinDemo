@@ -30,12 +30,13 @@ public class RetrofitHelper extends RetrofitManager {
     private static class RetrofitHelperHolder {
         private static final RetrofitHelper INSTANCE = new RetrofitHelper();
     }
+
     /**
      * get请求
      *
      * @param num 参数
      */
-    public Observable<String> getJoke(String num) {
+    public Observable<String> getJoke(int num) {
         return autumnfishAPIString.getjoke(num)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());

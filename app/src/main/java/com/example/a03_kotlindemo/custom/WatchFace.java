@@ -252,10 +252,10 @@ public class WatchFace extends View {
             //绘制背景图
             canvas.save();
 
-            Path path =new Path();
-            path.addCircle(mRadius,mRadius,mRadius, Path.Direction.CW);
+            Path path = new Path();
+            path.addCircle(mRadius, mRadius, mRadius, Path.Direction.CW);
             canvas.clipPath(path);
-            canvas.drawBitmap(mBgBitmap, mSrcRect, mDesRect, mSecondPaint);
+            canvas.drawBitmap(mBgBitmap, mSrcRect, mDesRect, mScalePain);
             canvas.restore();
         }
         //绘制刻度
