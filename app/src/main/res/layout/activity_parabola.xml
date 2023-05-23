@@ -20,4 +20,46 @@
         android:scaleType="centerCrop"
         android:src="@mipmap/test1" />
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnHandlerThread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="子线程Handler"
+            android:layout_marginRight="20dp"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnHandlerThreadStop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="子线程Handler停止"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnMyHandlerThread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自定义子线程Handler"
+            android:layout_marginRight="20dp"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnMyHandlerThreadStop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自定义子线程Handler停止"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
 </LinearLayout>

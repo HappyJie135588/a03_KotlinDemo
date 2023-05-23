@@ -1,7 +1,7 @@
 package com.example.a03_kotlindemo.parabola;
 
 public class HandlerDemo extends Thread {
-    Looper looper = new Looper();
+    MyLooper looper = new MyLooper();
 
     @Override
     public void run() {
@@ -9,7 +9,7 @@ public class HandlerDemo extends Thread {
     }
 }
 
-class Looper {
+class MyLooper {
     private Runnable task;
     private boolean quit;
 
