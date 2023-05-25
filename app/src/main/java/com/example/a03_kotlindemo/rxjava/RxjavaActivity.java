@@ -20,7 +20,10 @@ public class RxjavaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityRxjavaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        initRxjava();
+    }
 
+    private void initRxjava() {
         binding.btnRxjavaTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

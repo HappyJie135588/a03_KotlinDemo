@@ -3,6 +3,7 @@ package com.example.a03_kotlindemo
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.a03_kotlindemo.car.CarActivity
 import com.example.a03_kotlindemo.custom.CustomViewActivity
 import com.example.a03_kotlindemo.databinding.ActivityMainBinding
 import com.example.a03_kotlindemo.kt.KotlinMainActivity
@@ -30,6 +31,9 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btnCustomView.setOnClickListener {
             startActivity(Intent(this, CustomViewActivity::class.java))
+        }
+        binding.btnCar.setOnClickListener {
+            startActivity(Intent(this, CarActivity::class.java))
         }
     }
 }

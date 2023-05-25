@@ -29,8 +29,8 @@
             android:id="@+id/btnHandlerThread"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="子线程Handler"
             android:layout_marginRight="20dp"
+            android:text="子线程Handler"
             android:textAllCaps="false" />
 
         <Button
@@ -50,8 +50,8 @@
             android:id="@+id/btnMyHandlerThread"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
             android:text="自定义子线程Handler"
-            android:layout_marginRight="20dp"
             android:textAllCaps="false" />
 
         <Button
@@ -62,4 +62,65 @@
             android:textAllCaps="false" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvCreateThread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Create子线程更新UI"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/tvOnResumeThread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OnResume子线程更新UI"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnBinderBind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Binder绑定"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnBinderUnbind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Binder解绑"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnBinderGet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Binder获取数据"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/tvBinderGet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="结果：" />
+    </LinearLayout>
 </LinearLayout>
