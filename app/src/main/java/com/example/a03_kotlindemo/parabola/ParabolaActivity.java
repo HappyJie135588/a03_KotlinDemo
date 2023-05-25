@@ -1,7 +1,9 @@
 package com.example.a03_kotlindemo.parabola;
 
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.Handler;
@@ -24,12 +26,14 @@ public class ParabolaActivity extends AppCompatActivity {
     private static final String TAG = "ParabolaActivity";
     private ActivityParabolaBinding binding;
     private Intent intent;
+    private Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityParabolaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        mContext = this;
         Log.d(TAG, "onCreate: 正常拿宽高" + binding.tvBinderGet.getWidth());
         binding.tvBinderGet.post(new Runnable() {
             @Override
@@ -40,11 +44,12 @@ public class ParabolaActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                binding.tvCreateThread.setText("onCreate子线程更新Ui");
+                binding.tvCreateThread.setText("onCreate子线程更新Ui更新后");
             }
         }).start();
         initHandler();
         initBinder();
+        initBroadcastReceiver();
     }
 
     @Override
@@ -54,7 +59,7 @@ public class ParabolaActivity extends AppCompatActivity {
 //        new Thread(new Runnable() {
 //            @Override
 //            public void run() {
-//                binding.tvOnResumeThread.setText("onResume子线程更新Ui");
+//                binding.tvOnResumeThread.setText("onResume子线程更新Ui更新后");
 //            }
 //        }).start();
         Log.d(TAG, "onResume: 正常拿宽高" + binding.tvBinderGet.getWidth());
@@ -181,6 +186,50 @@ public class ParabolaActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
+            }
+        });
+    }
+
+    private MyReceiver1 myReceiver1 = null;
+
+    private void initBroadcastReceiver() {
+        binding.btnSendReceiver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentClass = new Intent(mContext, MyReceiver1.class);
+                intentClass.putExtra("data", "发送显示广播");
+                Intent intentAction = new Intent(MyReceiver1.ACTION);
+                intentAction.putExtra("data", "发送隐示广播");
+                sendBroadcast(intentAction);
+            }
+        });
+        binding.btnRegistReceiver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (myReceiver1 == null) {
+                    myReceiver1 = new MyReceiver1();
+                    registerReceiver(myReceiver1, new IntentFilter(MyReceiver1.ACTION));
+                }
+            }
+        });
+        binding.btnUnRegistReceiver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (myReceiver1 != null) {
+                    unregisterReceiver(myReceiver1);
+                    myReceiver1 = null;
+                }
+            }
+        });
+        binding.btnSendOrderReceiver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentOrder = new Intent(MyReceiver2.ACTION);
+                intentOrder.putExtra("data", "默认最新注册最先收到，除非设置priority");
+                //由于Andrid8对隐式广播的限制，需要加上包名变成内部广播指定app接收
+                intentOrder.setPackage("com.example.a03_kotlindemo");
+//                sendBroadcast(intentOrder);//发送无序广播
+                sendOrderedBroadcast(intentOrder, null);//发送有序广播才能被中断
             }
         });
     }

@@ -72,14 +72,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:text="Create子线程更新UI"
+            android:text="Create子线程更新UI更新前"
             android:textAllCaps="false" />
 
         <TextView
             android:id="@+id/tvOnResumeThread"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="OnResume子线程更新UI"
+            android:text="OnResume子线程更新UI更新前"
             android:textAllCaps="false" />
     </LinearLayout>
 
@@ -122,5 +122,47 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="结果：" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSendReceiver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="发送广播"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnRegistReceiver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="注册广播" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSendOrderReceiver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="有序广播" />
+
+        <Button
+            android:id="@+id/btnUnRegistReceiver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注销广播" />
     </LinearLayout>
 </LinearLayout>
