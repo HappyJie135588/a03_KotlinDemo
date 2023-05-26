@@ -11,6 +11,7 @@
 
     <queries>
         <package android:name="com.example.service" />
+
         <intent>
             <action android:name="com.example.aidlserver" />
         </intent>
@@ -28,23 +29,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.A03_KotlinDemo"
         tools:targetApi="31">
-        <receiver
-            android:name=".parabola.MyReceiver2"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.example.a03_kotlindemo.parabola.intent.action.MyReceiver2" />
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name=".parabola.MyReceiver3"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.example.a03_kotlindemo.parabola.intent.action.MyReceiver2" />
-            </intent-filter>
-        </receiver>
-
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -78,6 +62,43 @@
         <activity
             android:name=".car.SecondDisplayActivity"
             android:exported="false" />
+
+        <receiver
+            android:name=".parabola.MyReceiver2"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.a03_kotlindemo.parabola.intent.action.MyReceiver2" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".parabola.MyReceiver3"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.a03_kotlindemo.parabola.intent.action.MyReceiver2" />
+            </intent-filter>
+        </receiver>
+        <!--私有进程-->
+        <!--        <activity-->
+        <!--            android:name=".parabola.MultiprocessActivity"-->
+        <!--            android:exported="false"-->
+        <!--            android:process=":remote" />-->
+        <activity
+            android:name=".parabola.MultiprocessActivity"
+            android:exported="false"
+            android:process="com.example.hhhh" />
+        <!--私有进程-->
+        <!--        <service-->
+        <!--            android:name=".parabola.MultiprocessService"-->
+        <!--            android:enabled="true"-->
+        <!--            android:exported="true"-->
+        <!--            android:process=":remote" />-->
+        <service
+            android:name=".parabola.MultiprocessService"
+            android:enabled="true"
+            android:exported="true"
+            android:process="com.example.jjjj" />
     </application>
 
 </manifest>

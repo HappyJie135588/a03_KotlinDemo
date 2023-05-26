@@ -50,6 +50,7 @@ public class ParabolaActivity extends AppCompatActivity {
         initHandler();
         initBinder();
         initBroadcastReceiver();
+        initMultiprocess();
     }
 
     @Override
@@ -230,6 +231,28 @@ public class ParabolaActivity extends AppCompatActivity {
                 intentOrder.setPackage("com.example.a03_kotlindemo");
 //                sendBroadcast(intentOrder);//发送无序广播
                 sendOrderedBroadcast(intentOrder, null);//发送有序广播才能被中断
+            }
+        });
+    }
+
+    private void initMultiprocess() {
+        Intent multiprocessServiceIntent = new Intent(this, MultiprocessService.class);
+        binding.btnMultiprocessServiceStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startService(multiprocessServiceIntent);
+            }
+        });
+        binding.btnMultiprocessServiceStop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stopService(multiprocessServiceIntent);
+            }
+        });
+        binding.btnMultiprocessActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mContext, MultiprocessActivity.class));
             }
         });
     }
