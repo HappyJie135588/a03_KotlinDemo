@@ -7,6 +7,7 @@ import com.example.a03_kotlindemo.car.CarActivity
 import com.example.a03_kotlindemo.custom.CustomViewActivity
 import com.example.a03_kotlindemo.databinding.ActivityMainBinding
 import com.example.a03_kotlindemo.kt.KotlinMainActivity
+import com.example.a03_kotlindemo.maniu.MaNiuActivity
 import com.example.a03_kotlindemo.network.JavaNetWorkActivity
 import com.example.a03_kotlindemo.parabola.ParabolaActivity
 import com.example.a03_kotlindemo.rxjava.RxjavaActivity
@@ -34,6 +35,9 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btnCar.setOnClickListener {
             startActivity(Intent(this, CarActivity::class.java))
+        }
+        binding.btnManiu.setOnClickListener {
+            startActivity(Intent(this, MaNiuActivity::class.java))
         }
     }
 }

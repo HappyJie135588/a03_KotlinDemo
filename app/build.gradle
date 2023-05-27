@@ -71,5 +71,6 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-core-ktx:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    implementation 'com.github.markzhai:blockcanary-android:1.5.0'//没有使用，只是为了看别人写的代码
 
 }

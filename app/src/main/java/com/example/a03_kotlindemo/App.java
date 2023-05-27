@@ -45,7 +45,7 @@ public class App extends Application {
             }
         }
 
-        if ("com.cah.androidtest".equals(processNameString)) {
+        if ("com.example.a03_kotlindemo".equals(processNameString)) {
             Log.e(TAG, "onCreate: processName = " + processNameString + " ===work");
             ToastUtils.show("onCreate: processName = " + processNameString + " ===work" + i++);
         } else {

@@ -78,27 +78,47 @@
             <intent-filter>
                 <action android:name="com.example.a03_kotlindemo.parabola.intent.action.MyReceiver2" />
             </intent-filter>
-        </receiver>
-        <!--私有进程-->
-        <!--        <activity-->
-        <!--            android:name=".parabola.MultiprocessActivity"-->
-        <!--            android:exported="false"-->
-        <!--            android:process=":remote" />-->
+        </receiver> <!-- 私有进程 -->
+        <!-- <activity -->
+        <!-- android:name=".parabola.MultiprocessActivity" -->
+        <!-- android:exported="false" -->
+        <!-- android:process=":remote" /> -->
         <activity
             android:name=".parabola.MultiprocessActivity"
             android:exported="false"
-            android:process="com.example.hhhh" />
-        <!--私有进程-->
-        <!--        <service-->
-        <!--            android:name=".parabola.MultiprocessService"-->
-        <!--            android:enabled="true"-->
-        <!--            android:exported="true"-->
-        <!--            android:process=":remote" />-->
+            android:process="com.example.hhhh" /> <!-- 私有进程 -->
+        <!-- <service -->
+        <!-- android:name=".parabola.MultiprocessService" -->
+        <!-- android:enabled="true" -->
+        <!-- android:exported="true" -->
+        <!-- android:process=":remote" /> -->
         <service
             android:name=".parabola.MultiprocessService"
             android:enabled="true"
             android:exported="true"
             android:process="com.example.jjjj" />
+
+        <activity
+            android:name=".TestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".maniu.MaNiuActivity"
+            android:exported="false" />
+        <!--导入blockcanary需要修改exported=true不然报错-->
+        <activity
+            android:name="com.github.moduth.blockcanary.ui.DisplayActivity"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@drawable/block_canary_icon"
+            android:label="@string/block_canary_display_activity_label"
+            android:taskAffinity="com.github.moduth.blockcanary"
+            android:theme="@style/block_canary_BlockCanary.Base">
+            <!--            <intent-filter>-->
+            <!--                <action android:name="android.intent.action.MAIN" />-->
+
+            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+            <!--            </intent-filter>-->
+        </activity>
     </application>
 
 </manifest>

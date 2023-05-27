@@ -56,7 +56,7 @@ public class ParabolaActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        //返回页面会保存
+        //返回页面会抱错
 //        new Thread(new Runnable() {
 //            @Override
 //            public void run() {

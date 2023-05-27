@@ -47,4 +47,10 @@
         android:layout_height="wrap_content"
         android:text="Car"
         android:textAllCaps="false" />
+    <Button
+        android:id="@+id/btnManiu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="码牛"
+        android:textAllCaps="false" />
 </LinearLayout>
