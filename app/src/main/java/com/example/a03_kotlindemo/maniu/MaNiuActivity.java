@@ -12,6 +12,8 @@ import com.example.a03_kotlindemo.databinding.ActivityMaNiuBinding;
 import com.example.a03_kotlindemo.maniu.blockcanary.BlockCanary;
 import com.example.a03_kotlindemo.maniu.choreographer.ChoreographerHelper;
 
+import java.util.concurrent.locks.LockSupport;
+
 public class MaNiuActivity extends AppCompatActivity {
     private ActivityMaNiuBinding binding;
     private Context mContext;
@@ -23,6 +25,7 @@ public class MaNiuActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         mContext = this;
         initPrinter();
+        initCrash();
     }
 
     /**
@@ -44,5 +47,18 @@ public class MaNiuActivity extends AppCompatActivity {
                 startActivity(new Intent(mContext, TestActivity.class));
             }
         });
+    }
+
+    /**
+     * 卡顿优化
+     */
+    private void initCrash() {
+        binding.btnTestANR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LockSupport.park();
+            }
+        });
+
     }
 }

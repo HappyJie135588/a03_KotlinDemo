@@ -47,10 +47,21 @@ public class ParabolaActivity extends AppCompatActivity {
                 binding.tvCreateThread.setText("onCreate子线程更新Ui更新后");
             }
         }).start();
+        binding.btnAnimate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.ivTest.animate().translationX(200);
+            }
+        });
         initHandler();
         initBinder();
         initBroadcastReceiver();
         initMultiprocess();
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
     }
 
     @Override
@@ -73,12 +84,6 @@ public class ParabolaActivity extends AppCompatActivity {
     }
 
     private void initHandler() {
-        binding.btnAnimate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                binding.ivTest.animate().translationX(200);
-            }
-        });
         MyHandlerThread myHandlerThread = new MyHandlerThread();
         myHandlerThread.start();
         Handler myHandler = new Handler(myHandlerThread.getmLooper()) {

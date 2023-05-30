@@ -37,8 +37,8 @@ public class StackSampler {
             sampleInterval = DEFAULT_SAMPLE_INTERVAL;
         }
         mSampleInterval = sampleInterval;
-        //初始化为指定长度的1.4倍，防止扩容影响性能HashMap负载因子0.75
-        sStackMap = new LinkedHashMap<>((int)(DEFAULT_MAX_ENTRY_COUNT*1.4));
+        //初始化为指定长度，并设置负载因子为1，防止扩容影响性能，扩容：当前容量 的比例超过（>）了 扩容因子，就会扩容
+        sStackMap = new LinkedHashMap<>(DEFAULT_MAX_ENTRY_COUNT,1);
     }
 
     /**
