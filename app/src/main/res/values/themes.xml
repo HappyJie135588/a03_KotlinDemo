@@ -13,4 +13,9 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <!--启动优化之黑白屏优化设置Manifest中LauncherActivity的主题-->
+    <style name="Theme.Launcher" parent="Theme.A03_KotlinDemo">
+        <!--TODO 无意间发现的，感觉像是Android的bug,设置一个空的layer,就直接不显示黑白屏Window,后期验证-->
+        <item name="android:windowBackground">@drawable/launcher_layout</item>
+    </style>
 </resources>

@@ -16,6 +16,8 @@ import com.example.a03_kotlindemo.rxjava.RxjavaActivity
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
+        //由于黑白屏优化在Manifest中设置了windowBackground主题，这里重新设置回来
+        setTheme(R.style.Theme_A03_KotlinDemo)
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
