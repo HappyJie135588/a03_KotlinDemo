@@ -3,6 +3,7 @@ package com.example.a03_kotlindemo
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.a03_kotlindemo.androidsimple.AndroidSimpleActivity
 import com.example.a03_kotlindemo.car.CarActivity
 import com.example.a03_kotlindemo.custom.CustomViewActivity
 import com.example.a03_kotlindemo.databinding.ActivityMainBinding
@@ -18,6 +19,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.btnAndroidSimple.setOnClickListener {
+            startActivity(Intent(this, AndroidSimpleActivity::class.java))
+        }
         binding.btnKotlin.setOnClickListener {
             startActivity(Intent(this, KotlinMainActivity::class.java))
         }

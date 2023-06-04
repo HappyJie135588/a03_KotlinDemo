@@ -1,6 +1,8 @@
 # a03_KotlinDemo
 ## 此demo为学习记录demo,会将自己实现过的功能框架的最基础版本代码记录下来,
 ## 不包含任何业务代码,便于遇到相似功能,或搭建新项目框架时的快速反应,避免重复造轮子,
+##测试真机为华为P50_HarmonyOS_3.0.0
+##虚拟机为Android12
 
 1. 包含Java版Okhttp3封装，Retrofit+Rxjava网络请求框架封装可继续配合ViewModel+LiveData+ViewBinding实现MVVM架构
 2. 包含Kotlin版Retrofit+ViewModel+LiveData+ViewBind实现MVVM架构
@@ -10,6 +12,7 @@
 6. 包含多进程多屏应用,Binder,广播，服务
 7. 包含自定义Looper.Printer实现BlockCannary打印主线程卡顿堆栈,通过编舞者打印卡顿时长与丢帧信息
 8. 包含自定义Fragment栈管理
+9. 添加图文文件文件io操作
 
 ##后期计划
 1. 会将之前很早基于ijkplayer封装的播放控制器的代码移植过来,之前的代码在HappyJie135588(可能跑不起来)

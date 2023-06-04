@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".androidsimple.AndroidSimpleActivity">
+
+    <Button
+        android:id="@+id/btnWrite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="写文本图片" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnRead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="读文本图片" />
+
+        <TextView
+            android:id="@+id/tvReadTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="结果：" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivReadTest"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#999999"
+        android:scaleType="center" />
+
+</LinearLayout>

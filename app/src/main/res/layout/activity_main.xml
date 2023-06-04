@@ -7,6 +7,13 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/btnAndroidSimple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Android基础"
+        android:textAllCaps="false" />
+
+    <Button
         android:id="@+id/btnKotlin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
