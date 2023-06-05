@@ -2,6 +2,8 @@ package com.example.a03_kotlindemo
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Debug
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.a03_kotlindemo.androidsimple.AndroidSimpleActivity
 import com.example.a03_kotlindemo.car.CarActivity
@@ -14,13 +16,20 @@ import com.example.a03_kotlindemo.parabola.ParabolaActivity
 import com.example.a03_kotlindemo.rxjava.RxjavaActivity
 
 class MainActivity : AppCompatActivity() {
+    private val TAG: String = "MainActivity"
     private lateinit var binding: ActivityMainBinding
+    private var isFirst = true//用于判断是否首次加载
     override fun onCreate(savedInstanceState: Bundle?) {
         //由于黑白屏优化在Manifest中设置了windowBackground主题，这里重新设置回来
         setTheme(R.style.Theme_A03_KotlinDemo)
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        //可以用第三方AsyncLayoutInflater异步执行xml加载
         setContentView(binding.root)
+        initButton()
+    }
+
+    private fun initButton() {
         binding.btnAndroidSimple.setOnClickListener {
             startActivity(Intent(this, AndroidSimpleActivity::class.java))
         }
@@ -45,5 +54,19 @@ class MainActivity : AppCompatActivity() {
         binding.btnManiu.setOnClickListener {
             startActivity(Intent(this, MaNiuActivity::class.java))
         }
+    }
+
+    //可以做延时操作，View绘制好之后调用，但是要判断是否首次执行
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (isFirst) {
+            isFirst = false
+            //检测方法的执行时间,开始方法追踪
+            Debug.stopMethodTracing()
+            Log.d(TAG, "onCreate: 停止方法追踪")
+            Log.d(TAG, "onWindowFocusChanged: 执行延时操作")
+            Thread.sleep(5000)
+        }
+
     }
 }

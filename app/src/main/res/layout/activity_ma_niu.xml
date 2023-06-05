@@ -17,4 +17,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="测试ANR" />
+
+    <Button
+        android:id="@+id/btnTestLaunch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="启动优化" />
+
 </LinearLayout>

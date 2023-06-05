@@ -15,6 +15,7 @@ import com.example.a03_kotlindemo.maniu.choreographer.ChoreographerHelper;
 import java.util.concurrent.locks.LockSupport;
 
 public class MaNiuActivity extends AppCompatActivity {
+    private static final String TAG = "MaNiuActivity";
     private ActivityMaNiuBinding binding;
     private Context mContext;
 
@@ -26,6 +27,7 @@ public class MaNiuActivity extends AppCompatActivity {
         mContext = this;
         initPrinter();
         initCrash();
+        initLaunch();
     }
 
     /**
@@ -59,6 +61,14 @@ public class MaNiuActivity extends AppCompatActivity {
                 LockSupport.park();
             }
         });
+    }
 
+    private void initLaunch() {
+        binding.btnTestLaunch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 }
