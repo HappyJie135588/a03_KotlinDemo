@@ -21,6 +21,7 @@ import java.io.IOException;
 
 /**
  * 文件流读写工具类，包括获取指定路径与图文读取
+ * 耗时操作，请放到子线程中使用，后期会加上线程池
  */
 public class MyFileUtils {
     private static final String TAG = "MyFileUtils";

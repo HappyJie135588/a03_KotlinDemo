@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.Debug;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.StrictMode;
 import android.util.Log;
 
 import com.example.a03_kotlindemo.utils.MyFileUtils;
@@ -26,7 +27,7 @@ public class App extends Application {
     public App() {
         //检测方法的执行时间,开始方法追踪,会在指定目录输出.trace文件，使用Profiler分析
         //和直接使用Profiling启动类似
-        if(Config.IS_RECODE_LAUNCH_TIME){
+        if (Config.IS_RECODE_LAUNCH_TIME) {
             Debug.startMethodTracing(MyFileUtils.getOuterPublicPath(PATH, FILENAME));
             Log.d(TAG, "App: 开始方法追踪");
         }
@@ -37,21 +38,37 @@ public class App extends Application {
         super.onCreate();
         mainHandler = new Handler(Looper.getMainLooper());
         context = this;
-        /**
-         * RxJava取消订阅异常处理
-         */
+
+        //RxJava取消订阅异常处理
+        initRxjava();
+        //多进程判断是哪条进程
+        initMultiProcess();
+        //严格模式
+        initStrictMode();
+    }
+
+    /**
+     * RxJava取消订阅异常处理
+     */
+    private void initRxjava() {
         RxJavaPlugins.setErrorHandler(new Consumer<Throwable>() {
             @Override
             public void accept(Throwable throwable) throws Throwable {
                 Log.i("TAG", "setErrorHandler accept: throwable=" + throwable.toString());
             }
         });
+    }
 
+    /**
+     * 多进程判断是哪条进程
+     */
+    private void initMultiProcess() {
         int pid = android.os.Process.myPid();
         Log.e(TAG, "Application.onCreate ==== pid: " + pid);
         String processNameString = "";
         ActivityManager mActivityManager =
                 (ActivityManager) this.getSystemService(getApplicationContext().ACTIVITY_SERVICE);
+
         for (ActivityManager.RunningAppProcessInfo appProcess : mActivityManager.getRunningAppProcesses()) {
             Log.e(TAG, "onCreate: appProcess.pid = " + appProcess.pid);
             if (appProcess.pid == pid) {
@@ -68,6 +85,34 @@ public class App extends Application {
         }
     }
 
+    /**
+     * 设置严格模式检测优化点,真的很严格
+     */
+    private void initStrictMode() {
+        if (Config.IS_STRICT_MODE) {
+            //线程检测策略
+            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+                    .detectDiskReads()//检测磁盘读操作
+                    .detectDiskWrites()//检测磁盘写操作
+                    .detectNetwork()
+                    .penaltyLog()//违规则打印日志
+                    .penaltyFlashScreen()//违规则闪屏
+//                    .penaltyDeath()//违规则崩溃
+                    .build());
+            //虚拟机检测策略
+            StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
+                    .detectLeakedSqlLiteObjects()//Sqlite对象泄漏
+                    .detectLeakedClosableObjects()//未关闭的Closable对象泄漏
+                    .penaltyLog()//违规则打印日志
+//                    .penaltyDeath()//违规则崩溃
+                    .build());
+        }
+    }
+
+    /**
+     * 回到主线程执行
+     * @param runnable
+     */
     public static void post(Runnable runnable) {
         if (Looper.getMainLooper().getThread() == Thread.currentThread()) {
             runnable.run();

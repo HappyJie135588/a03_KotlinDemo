@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         setTheme(R.style.Theme_A03_KotlinDemo)
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        //可以用第三方AsyncLayoutInflater异步执行xml加载
+        //可以用第三方AsyncLayoutInflater异步执行xml加载（不到万不得已，谨慎使用）
         setContentView(binding.root)
         initButton()
     }

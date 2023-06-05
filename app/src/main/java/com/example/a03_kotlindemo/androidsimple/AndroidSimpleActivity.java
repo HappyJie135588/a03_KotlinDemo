@@ -34,11 +34,17 @@ public class AndroidSimpleActivity extends AppCompatActivity {
         binding.btnWrite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //保存文本
-                MyFileUtils.saveText(textPath, "文本读取测试:\n" + System.currentTimeMillis());
-                Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.test1);
-                //保存图片
-                MyFileUtils.saveImage(bitmapPath, bitmap);
+                //测试StrictMode严格模式
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        //保存文本
+                        MyFileUtils.saveText(textPath, "文本读取测试:\n" + System.currentTimeMillis());
+                        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.test1);
+                        //保存图片
+                        MyFileUtils.saveImage(bitmapPath, bitmap);
+                    }
+                }).start();
             }
         });
         binding.btnRead.setOnClickListener(new View.OnClickListener() {
