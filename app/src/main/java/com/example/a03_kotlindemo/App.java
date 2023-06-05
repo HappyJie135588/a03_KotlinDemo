@@ -26,8 +26,10 @@ public class App extends Application {
     public App() {
         //检测方法的执行时间,开始方法追踪,会在指定目录输出.trace文件，使用Profiler分析
         //和直接使用Profiling启动类似
-        Debug.startMethodTracing(MyFileUtils.getOuterPublicPath(PATH, FILENAME));
-        Log.d(TAG, "App: 开始方法追踪");
+        if(Config.IS_RECODE_LAUNCH_TIME){
+            Debug.startMethodTracing(MyFileUtils.getOuterPublicPath(PATH, FILENAME));
+            Log.d(TAG, "App: 开始方法追踪");
+        }
     }
 
     @Override

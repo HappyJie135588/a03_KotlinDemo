@@ -61,11 +61,13 @@ class MainActivity : AppCompatActivity() {
         super.onWindowFocusChanged(hasFocus)
         if (isFirst) {
             isFirst = false
-            //检测方法的执行时间,开始方法追踪
-            Debug.stopMethodTracing()
-            Log.d(TAG, "onCreate: 停止方法追踪")
+            //检测方法的执行时间,停止方法追踪
+            if (Config.IS_RECODE_LAUNCH_TIME) {
+                Debug.stopMethodTracing()
+                Log.d(TAG, "onCreate: 停止方法追踪")
+            }
             Log.d(TAG, "onWindowFocusChanged: 执行延时操作")
-            Thread.sleep(5000)
+            Thread.sleep(2000)
         }
 
     }

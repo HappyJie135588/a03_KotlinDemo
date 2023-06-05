@@ -1,63 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnAndroidSimple"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Android基础"
-        android:textAllCaps="false" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnKotlin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kotlin"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnAndroidSimple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android基础"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/btnRxJava"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="手撸Rxjava"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnKotlin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kotlin"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/btnJava"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Java网络框架"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnRxJava"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="手撸Rxjava"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/btnParabola"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Java扔物线"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnJava"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Java网络框架"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/btnCustomView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="自定义View"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnParabola"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Java扔物线"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/btnCar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Car"
-        android:textAllCaps="false" />
-    <Button
-        android:id="@+id/btnManiu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="码牛"
-        android:textAllCaps="false" />
-</LinearLayout>
+        <Button
+            android:id="@+id/btnCustomView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自定义View"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnCar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Car"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnManiu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="码牛"
+            android:textAllCaps="false" />
+    </LinearLayout>
+</ScrollView>
