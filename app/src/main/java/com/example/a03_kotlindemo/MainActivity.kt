@@ -14,6 +14,7 @@ import com.example.a03_kotlindemo.maniu.MaNiuActivity
 import com.example.a03_kotlindemo.network.JavaNetWorkActivity
 import com.example.a03_kotlindemo.parabola.ParabolaActivity
 import com.example.a03_kotlindemo.rxjava.RxjavaActivity
+import com.example.a03_kotlindemo.xiangxue.XiangXueActivity
 
 class MainActivity : AppCompatActivity() {
     private val TAG: String = "MainActivity"
@@ -51,8 +52,11 @@ class MainActivity : AppCompatActivity() {
         binding.btnCar.setOnClickListener {
             startActivity(Intent(this, CarActivity::class.java))
         }
-        binding.btnManiu.setOnClickListener {
+        binding.btnMaNiu.setOnClickListener {
             startActivity(Intent(this, MaNiuActivity::class.java))
+        }
+        binding.btnXiangXue.setOnClickListener {
+            startActivity(Intent(this, XiangXueActivity::class.java))
         }
     }
 
