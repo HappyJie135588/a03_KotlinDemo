@@ -73,5 +73,11 @@
             android:layout_height="wrap_content"
             android:text="享学"
             android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnDongNaoXueYuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="动脑学院"
+            android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>

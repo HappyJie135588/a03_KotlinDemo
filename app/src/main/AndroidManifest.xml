@@ -127,6 +127,9 @@
         <activity
             android:name=".xiangxue.XiangXueActivity"
             android:exported="false" />
+        <activity
+            android:name=".dongnanxueyuan.DongNaoXueYuanActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

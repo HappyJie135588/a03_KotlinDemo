@@ -9,6 +9,7 @@ import com.example.a03_kotlindemo.androidsimple.AndroidSimpleActivity
 import com.example.a03_kotlindemo.car.CarActivity
 import com.example.a03_kotlindemo.custom.CustomViewActivity
 import com.example.a03_kotlindemo.databinding.ActivityMainBinding
+import com.example.a03_kotlindemo.dongnanxueyuan.DongNaoXueYuanActivity
 import com.example.a03_kotlindemo.kt.KotlinMainActivity
 import com.example.a03_kotlindemo.maniu.MaNiuActivity
 import com.example.a03_kotlindemo.network.JavaNetWorkActivity
@@ -57,6 +58,9 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btnXiangXue.setOnClickListener {
             startActivity(Intent(this, XiangXueActivity::class.java))
+        }
+        binding.btnDongNaoXueYuan.setOnClickListener {
+            startActivity(Intent(this, DongNaoXueYuanActivity::class.java))
         }
     }
 

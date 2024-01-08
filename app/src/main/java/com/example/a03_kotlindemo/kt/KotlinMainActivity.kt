@@ -35,7 +35,7 @@ class KotlinMainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
         }
 
         model.register.observe(this, androidx.lifecycle.Observer {
-            binding.tvViewModel.text = it.msg
+            binding.tvViewModel.text = it?.msg
         })
         binding.btnViewModel.setOnClickListener {
             model.toRegister("HappyJie135588")
