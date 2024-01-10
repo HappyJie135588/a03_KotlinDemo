@@ -5,4 +5,6 @@ public interface RetrofitUrl {
     String autumnfish = "https://autumnfish.cn/api/";
     //阳光沙滩
     String sunofbeaches = "https://api.sunofbeaches.com/";
+    //名言警句
+    String windom = "https://api.xygeng.cn/";
 }

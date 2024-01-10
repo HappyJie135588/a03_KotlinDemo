@@ -8,10 +8,17 @@ import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
     var register: MutableLiveData<Register> = MutableLiveData()
+    var wisdom:MutableLiveData<WisdomData> = MutableLiveData()
     private var repository = Repository()
     fun toRegister(name: String) {
         viewModelScope.launch {
             register.value = repository.toRegister(name)
         }
     }
+    fun getWisdom(){
+        viewModelScope.launch {
+            wisdom.value = repository.getWisdom()
+        }
+    }
+
 }

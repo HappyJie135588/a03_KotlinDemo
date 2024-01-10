@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
-            android:text="请求"
+            android:text="延迟10秒本地请求"
             android:textAllCaps="false" />
 
         <TextView
@@ -36,11 +36,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
-            android:text="测试ViewMode"
+            android:text="远程无效请求"
             android:textAllCaps="false" />
 
         <TextView
             android:id="@+id/tvViewModel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="结果:" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnViewModel2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:text="远程获取名言警句"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/tvViewModel2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="结果:" />

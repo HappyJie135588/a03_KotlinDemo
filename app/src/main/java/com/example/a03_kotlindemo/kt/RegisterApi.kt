@@ -6,7 +6,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 
 //{"msg":"注册成功","code":200}
-data class Register(val msg: String, val code: Int) {
+data class Register(
+    val msg: String? = "访问失败",
+    val code: Int? = -1
+) {
 
 }
 

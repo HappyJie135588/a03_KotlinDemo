@@ -1,18 +1,25 @@
 package com.example.a03_kotlindemo.kt.repository
 
-import com.example.a03_kotlindemo.kt.Register
-import com.example.a03_kotlindemo.kt.registerApi
-import java.net.SocketException
+import com.example.a03_kotlindemo.kt.*
 
 class Repository {
     suspend fun toRegister(name: String): Register {
-        var _reshult: Register = Register("访问失败", -1)
+        var _result: Register? = null
         try {
-            _reshult = registerApi.postRegister(name)
-        } catch (e: SocketException) {
+            _result = registerApi.postRegister(name)
+        } catch (e: Exception) {
             println(e)
-            return _reshult
         }
-        return _reshult
+        return _result ?: Register()
+    }
+
+    suspend fun getWisdom(): WisdomData {
+        var _result: WisdomResponse<WisdomData>? = null
+        try {
+            _result = wisdomApi.getWisdom()
+        } catch (e: Exception) {
+            println(e)
+        }
+        return (_result ?: WisdomResponse(data = null)).data ?: WisdomData()
     }
 }
