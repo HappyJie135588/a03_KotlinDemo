@@ -64,6 +64,44 @@
             android:layout_height="wrap_content"
             android:text="结果:" />
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnException"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:text="被捕获的异常"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/tvException"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="结果:" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnException2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:text="没有被捕获的异常"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/tvException2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="结果:日志中查看打印信息，程序依然会崩溃" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
